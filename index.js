@@ -18,7 +18,7 @@ async function wald() {
     strategies.forEach(el => {
         min.push(Math.min(...el.split(' ')));
     });
-    console.log('Wald criteria: ');
+    console.log('%c Wald criteria: ', 'background: #222; color: #bada55');
     console.log(`Rows min values: ${min.join(' ')}`);
     console.log(`Max lower value: ${Math.max(...min)}`);
     strategies.forEach(el => {
@@ -40,7 +40,7 @@ async function laplace() {
         sumRows.push(el.reduce((a, c) => a + c));
     });
 
-    console.log('Laplace criteria: ');
+    console.log('%c Laplace criteria: ', 'background: #222; color: #bada55');
     console.log(`Rows sum values: ${sumRows.join(' ')}`);
     console.log(`Max value: ${Math.max(...sumRows)}`);
 
@@ -63,7 +63,7 @@ async function hurwitz(coef) {
         max.push(Math.max(...el.split(' ')));
         min.push(Math.min(...el.split(' ')));
     });
-    console.log('Hurwits criteria: ');
+    console.log('%c Hurwits criteria: ', 'background: #222; color: #bada55');
     console.log(`Coeficient: ${coef}`);
     console.log(`The lowest values of each row: ${min.join(' ')}`);
     console.log(`The highest values of each row: ${max.join(' ')}`);
@@ -86,7 +86,7 @@ async function hurwitz(coef) {
 async function bayesLaplace(probability) {
     let strategies = await getFile();
     strategies = strategies.split('\n');
-    console.log('Bayes-Laplace criteria: ');
+    console.log('%c Bayes-Laplace criteria: ', 'background: #222; color: #bada55');
     console.log('Formula: A11*k1 + A12*k2 + A13*k3');
     let values = [];
     strategies.forEach(el => {
